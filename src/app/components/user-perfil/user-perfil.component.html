@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="uft-8">
+    <link rel="stylesheet" type="text/css" href="user-perfil.component.css">
+    <link rel="icon" href="imgs/logo.jpg">
+</head>
+
+<title>
+    Sistema Staffing
+</title>
+
+<body class="backgroundcolors">
+    <nav>
+        <button mat-raised-button class="navbuttons">PERFIL</button>
+        <button mat-raised-button (click)="navegarProyectos()" class="navbuttons">PROYECTOS</button>
+        <button mat-raised-button (click)="navegarPassword()" class="navbuttons">CAMBIAR CONTRASEÑA</button>
+        <button mat-raised-button class="navbuttons" (click)="cerrarSesion()">CERRAR SESIÓN</button>
+        <hr class="righthr">
+    </nav>
+    <br><br>
+    <br>
+
+    <div *ngIf="tieneProyectoAsignado; else sinProyectoTemplate">
+        <div class="opacity3">
+            <h2>Proyecto Actual</h2>
+            <p class="paddingtext">Nombre del proyecto: {{proyectoDisplay.nombreProyecto}}</p>
+            <p class="paddingtext">Ubicación: {{proyectoDisplay.ubicacion}}</p>
+        </div>
+
+        <div class="opacity1">
+            <h2>Cargo</h2>
+            <p class="paddingtext">Cargo en el Proyecto: {{proyectoDisplay.cargoEjercido}} </p>
+        </div>
+
+        <div class="opacity2">
+            <h2>Fecha del proyecto</h2>
+            <p class="paddingtext">Inicio de Proyecto: {{proyectoDisplay.fechaInicio}}</p>
+            <p class="paddingtext">Término de Proyecto: {{proyectoDisplay.fechaTermino}}</p>
+        </div>
+    </div>
+
+    <ng-template #sinProyectoTemplate>
+        <div class="opacity3" >
+            <h2>SIN PROYECTO ASIGNADO</h2>
+            <p class="paddingtext">¡Aún no tienes ningún proyecto asignado!<br>Espera a que tu administrador te asigne uno.</p>
+        </div>
+    </ng-template>
+
+    <div class="opacity">
+        <img src="assets/imgs/profileicon.png" class="imgstyle">
+        <h3>
+            <hr class="lefthr">
+            <br>
+            Nombre: {{usuario.nombre}}
+            <br><br>
+            Apellido: {{usuario.apellido}}
+            <br><br>
+            Correo: {{usuario.correo}}
+            <br><br>
+            <hr class="lefthr">
+            <br>
+            <img src="assets/imgs/staffingLogo.png" class="imgstyle" style="width: 70%;">
+        </h3>
+    </div>
+    <br>
+</body>
+
+</html>

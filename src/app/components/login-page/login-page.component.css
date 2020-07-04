@@ -1,0 +1,154 @@
+body.backgroundcolors{
+    height: 100%;
+    margin:0;
+
+}
+
+body { 
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+}
+
+
+div.loginBox{
+    text-align: center;
+    font-family: Lato;
+    color: rgb(71, 71, 71);
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 40px;
+    width: 355px;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+
+    border-width: 1px;
+    border-color: gray;
+    border-style: solid;
+}
+
+.smalltxt{
+    font-size: 13px;
+}
+
+.textstyle{
+    font-family: Lato;
+    text-align: center;
+    color: rgb(90,90,90);
+}
+
+.inputstyle{
+    background-color: white;
+    width: 75%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    opacity: 2;
+}
+
+input.login{
+    color: white;
+    background-color: rgb(90,90,90);
+    width: 62%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-width: 0;
+    border-radius: 5px;
+    opacity: 0.95;
+}
+
+mat-sidenav-container{
+    height: 100%;
+    min-height: 100vh;
+    background: black;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+}
+
+mat-sidenav-content{
+
+    color: white;
+    text-align: center;
+
+    min-height: 100vh;
+    background-image: url(https://media.istockphoto.com/photos/abstract-background-picture-id955162894?k=6&m=955162894&s=612x612&w=0&h=xYck28My6VLIhvgFF8umklAiGhAuYueFSa8dTNiiwn4=);
+    background-size: cover;
+    background-position-y: center;
+}
+
+mat-sidenav{
+    width:48%;
+    overflow: hidden;
+    background-image: url(src\assets\imgs\pexels-photo-3184465.jpeg);
+    background-size: cover;
+    background-position-x: center;
+    box-shadow: 0px 0px 16px 2px #000000;
+    font-family: Lato;
+
+}
+
+.pbienvenido{
+    font-family: Lato;
+    font-size: 20px;
+    color: gray;
+
+}
+
+.h1sidenav{
+    font-size: 60px;
+    color: white;
+    padding-left: 5%;
+}
+
+.psidenav{
+    font-size: 20px;
+    color: white;
+    padding-left: 5%;
+}
+
+.matbuttons{
+    background-color: rgb(26, 131, 145);
+    margin-left: 5%;
+    margin-top: 3px;
+    width: 45%;
+    height: 8%;
+
+    color: white;
+    font-size: 16px;
+    text-align: left;
+
+    border-width: 1px;
+    border-color: rgb(19, 95, 105);
+    border-style: solid;
+
+}
+
+.maticonpadding1{
+    padding-left:143px
+}
+.maticonpadding2{
+    padding-left:32px
+}
+.maticonpadding3{
+    padding-left:138px
+}
+
+.imgsidenav{
+    float: right;
+}
+
+.loginicon{
+    margin-right: 2px;
+    vertical-align: middle;
+    margin-left: -15px;
+}

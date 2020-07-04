@@ -1,0 +1,90 @@
+body{
+  font-family: Lato;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px #000000;
+
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+mat-sidenav-container{
+  height: 100%;
+  min-height: 100vh
+
+}
+
+mat-sidenav, mat-sidenav-content{
+  padding: 16px;
+}
+
+mat-sidenav-content{
+
+  color: white;
+  text-align: center;
+
+  min-height: 100vh;
+  background-image: url(https://designshack.net/wp-content/uploads/best-poly-backgrounds.png);
+  background-size: cover;
+}
+
+mat-sidenav{
+  overflow: hidden;
+  background-color: rgb(238, 238, 238);
+  width:20%;
+  box-shadow: 0px 0px 16px 2px #000000;
+
+}
+
+mat-form-field{
+  width: 50%;
+}
+
+::ng-deep .mat-sort-header-container {
+  display:flex;
+  justify-content:center;
+}
+
+mat-header-cell {
+  display:flex;
+  justify-content:center;
+ }
+
+h2{
+  font-family: Lato;
+  text-align: center;
+  border: solid gray;
+  border-width: 1px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sidebarbuttons{
+  text-transform: uppercase;
+  height: 40px;
+  width: 100%;
+}
+
+.centerimg{
+  
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+.noclass{
+  color: red;
+  font-family: Lato;
+  font-weight: bolder;
+}
+
+.warnicon{
+  vertical-align: middle;
+}

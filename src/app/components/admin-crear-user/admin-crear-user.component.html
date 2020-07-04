@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Crear Nuevo Usuario</title>
+    </head>
+
+    <body>
+        
+        <mat-sidenav-container>
+            <mat-sidenav mode="side" opened="true" disableClose="true">
+
+                <h2>ADMINISTRADOR</h2><br>
+                <button mat-raised-button routerLink="/adminlista" class="sidebarbuttons" >USUARIOS</button><hr>
+                <button mat-raised-button routerLink="/admincrearuser" class="sidebarbuttons" >Crear Nuevo Usuario/Admin</button><hr>
+                <button mat-raised-button routerLink="/admincrearproyecto" class="sidebarbuttons">Crear Nuevo Proyecto</button><hr>
+                <button mat-raised-button routerLink="/adminterminarproyecto" class="sidebarbuttons">Terminar/Eliminar Proyecto</button><hr>
+    
+                <button mat-raised-button routerLink="" class="sidebarbuttons" (click)="cerrarSesion()">Cerrar Sesión</button><br><br>
+                <br>
+                <img src="assets/imgs/staffingLogo.png" width="135px" class="centerimg">
+            </mat-sidenav>
+
+            <mat-sidenav-content>
+                <br><br>
+                <h1>Crear Nuevo Usuario</h1>    
+                <br><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre(s)</mat-label>
+                    <input matInput type="text" #nombre>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Apellido(s)</mat-label>
+                    <input matInput type="text" #apellido>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill"> 
+                    <mat-label>Sexo</mat-label>
+                    <mat-select #sexo>
+                        <mat-option value="Masculino">Masculino</mat-option>
+                        <mat-option value="Femenino">Femenino</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Correo Electrónico</mat-label>
+                    <input matInput type="email" #correo>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Habilidades Técnicas</mat-label>
+                    <textarea matInput rows="6" #habilidadesTecnicas></textarea>
+                </mat-form-field>
+                <br><br>
+                <button mat-raised-button type="submit" style="width: 20%;" (click)="nuevoUser(correo.value,nombre.value,apellido.value,sexo.value,habilidadesTecnicas.value)">Enviar</button>
+
+                <br><br><br>
+                <hr style="width: 90%;  border: none; background-color: rgb(32, 32, 32); height: 1px;">
+                <br><br>
+                <h1>Crear Nuevo Administrador</h1>    
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Correo Administrador</mat-label>
+                    <input matInput type="text" #correoadmin>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput type="password" #contrasenaadmin>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button type="submit" style="width: 20%;" (click)="nuevoAdmin(correoadmin.value, contrasenaadmin.value)">Enviar</button>
+                <br><br>
+            </mat-sidenav-content>
+
+        </mat-sidenav-container>
+    </body>
+    
+</html>

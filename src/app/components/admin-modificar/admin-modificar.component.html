@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened="true" disableClose="true">
+
+            <h2>ADMINISTRADOR</h2><br>
+            <button mat-raised-button routerLink="/adminlista" class="sidebarbuttons" >USUARIOS</button><hr>
+            <button mat-raised-button routerLink="/admincrearuser" class="sidebarbuttons" >Crear Nuevo Usuario/Admin</button><hr>
+            <button mat-raised-button routerLink="/admincrearproyecto" class="sidebarbuttons">Crear Nuevo Proyecto</button><hr>
+            <button mat-raised-button routerLink="/adminterminarproyecto" class="sidebarbuttons">Terminar/Eliminar Proyecto</button><hr>
+
+            <button mat-raised-button routerLink="" class="sidebarbuttons" (click)="cerrarSesion()">Cerrar Sesión</button><br><br>
+            <br>
+            <img src="assets/imgs/staffingLogo.png" width="135px" class="centerimg">
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+
+            <br><br>
+            <div class="infodiv">
+                <img src="assets/imgs/profileicon2.png" width="180px" class="imgstyle">
+                <table>
+                    <tr>
+                        <th>Nombres</th>
+                        <td>{{usuario.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <th>Apellidos</th>
+                        <td>{{usuario.apellido}}</td>
+                    </tr>
+                    <tr>
+                        <th>Correo</th>
+                        <td>{{usuario.correo}}</td>
+                    </tr>
+                    <tr>
+                        <th>Sexo</th>
+                        <td>{{usuario.sexo}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>En proyecto</th>
+                        <td>{{usuario.enProyecto}}</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" style="text-align: left;"><strong>Habilidades Técnicas:</strong> {{usuario.habilidadesTecnicas}}</td>
+                    </tr>
+                </table>
+
+                <div class="buttonsbox">
+                    <button mat-raised-button class="buttons" [disabled]="estaEnProyecto" (click)="mostrarAsignarProyecto()">ASIGNAR PROYECTO</button>
+                    <br><br>
+                    <button mat-raised-button class="buttons" (click)="mostrarEliminarUsuario()">ELIMINAR USUARIO</button>
+                </div>
+                
+            </div>
+
+            <div *ngIf="mostrarAsignar" class="asignarbox">
+
+                <mat-form-field appearance="fill" style="margin-right: 10px;"> 
+                    <mat-label>Seleccionar Proyecto para Asignar</mat-label>
+                    <mat-select #nombreProyecto [(ngModel)]="proyectoSeleccionado">
+                        <mat-option *ngFor="let proyecto of listaProyectos" value="proyecto.nombreProyecto" [value]="proyecto.nombreProyecto">{{proyecto.nombreProyecto}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" >
+                    <mat-label>Cargo en el Proyecto</mat-label>
+                    <input matInput type="text" #cargo>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button type="submit" class="buttons" style="width: 20%; " (click)="asignarProyecto(nombreProyecto.value, usuario.correo, cargo.value)">ASIGNAR</button>   
+
+            </div>
+
+            <div *ngIf="mostrarEliminar" class="asignarbox" >
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Ingrese su contraseña</mat-label>
+                    <input matInput type="password" #password>
+                </mat-form-field>
+                <br>
+                <button mat-raised-button type="submit" class="deletebutton" style="width: 20%;" (click)="eliminarUsuario(password.value, usuario.correo)">Eliminar Usuario</button>
+
+            </div>
+            
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+</body>
+
+</html>

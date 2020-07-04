@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+    <mat-sidenav-container>
+        <mat-sidenav mode="side" opened="true" disableClose="true">
+
+            <h2>ADMINISTRADOR</h2><br>
+            <button mat-raised-button routerLink="/adminlista" class="sidebarbuttons" >USUARIOS</button><hr>
+            <button mat-raised-button routerLink="/admincrearuser" class="sidebarbuttons" >Crear Nuevo Usuario/Admin</button><hr>
+            <button mat-raised-button routerLink="/admincrearproyecto" class="sidebarbuttons">Crear Nuevo Proyecto</button><hr>
+            <button mat-raised-button routerLink="/adminterminarproyecto" class="sidebarbuttons">Terminar/Eliminar Proyecto</button><hr>
+
+            <button mat-raised-button routerLink="" class="sidebarbuttons" (click)="cerrarSesion()">Cerrar Sesión</button><br><br>
+            <br>
+            <img src="assets/imgs/staffingLogo.png" width="135px" class="centerimg">
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <br>
+            <h1>Administrar Usuarios</h1>
+            <br>
+            
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+                    <td mat-cell *matCellDef="let element">{{element.nombre}}</td>
+                </ng-container>
+        
+                <ng-container matColumnDef="apellido">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+                    <td mat-cell *matCellDef="let element">{{element.apellido}}</td>
+                </ng-container>
+        
+                <ng-container matColumnDef="correo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Correo</th>
+                    <td mat-cell *matCellDef="let element">{{element.correo}}</td>
+                </ng-container>
+        
+                <ng-container matColumnDef="sexo">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Sexo</th>
+                    <td mat-cell *matCellDef="let element">{{element.sexo}}</td>
+                </ng-container>
+        
+                <ng-container matColumnDef="enProyecto" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>En Proyecto</th>
+                    <td mat-cell *matCellDef="let element" [ngClass]="{'noclass': element.enProyecto=='NO'}">{{element.enProyecto}}  <mat-icon *ngIf="element.enProyecto=='NO'" class="warnicon">error</mat-icon></td>
+                </ng-container>
+        
+                <ng-container matColumnDef="administrar" >
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Modificar</th>
+                    <td mat-cell *matCellDef="let element" (click)="administrar(element.id_Usuario)">Administrar</td>
+                </ng-container>
+        
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10]" showFirstLastButtons></mat-paginator>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    
+
+</body>
+
+</html>

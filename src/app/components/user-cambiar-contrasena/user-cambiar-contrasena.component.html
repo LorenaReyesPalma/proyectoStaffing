@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="uft-8">
+    <link rel="icon" href="imgs/logo.jpg">
+</head>
+<title>
+    Sistema Staffing
+</title>
+
+<body class="backgroundcolors">
+    <nav>
+        <button mat-raised-button class="navbuttons" (click)="navegarPerfil()">PERFIL</button>
+        <button mat-raised-button class="navbuttons" (click)="navegarProyectos()">PROYECTOS</button>
+        <button mat-raised-button routerLink="/userpassword" class="navbuttons">CAMBIAR CONTRASEÑA</button>
+        <button mat-raised-button class="navbuttons" (click)="cerrarSesion()">CERRAR SESIÓN</button>
+        <hr class="righthr">
+    </nav>
+    <br>
+    <br>
+    <br>
+    <div class="opacity3">
+        <br>
+        <h2>Cambiar Contraseña</h2>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Contraseña Actual</mat-label>
+            <input matInput type="password" #passwordAntigua>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Contraseña Nueva</mat-label>
+            <input matInput type="password" #passwordNueva>
+        </mat-form-field>
+        <br><br>
+        <button mat-raised-button type="submit" style="width: 20%;" (click)="validarPassword(passwordAntigua.value, passwordNueva.value)">Enviar</button>    
+
+    </div>
+    <div class="opacity">
+        <img src="assets/imgs/profileicon.png" class="imgstyle">
+        <h3>
+            <hr class="lefthr">
+            <br>
+            Nombre: {{usuario.nombre}}
+            <br><br>
+            Apellido: {{usuario.apellido}}
+            <br><br>
+            Correo: {{usuario.correo}}
+            <br><br>
+            <hr class="lefthr">
+            <br>
+            <img src="assets/imgs/staffingLogo.png" class="imgstyle" style="width: 70%;">
+
+        </h3>
+    </div>
+</body>
+
+</html>

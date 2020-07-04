@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="login-page.component.css">
+</head>
+
+<body>
+
+    <mat-sidenav-container>
+
+        <mat-sidenav mode="side" opened="true" disableClose="true">
+            
+            <img src="assets/imgs/staffingLogo2.png" width="90px" class="imgsidenav" >
+            <br><br><br><br>
+
+            <h1 class="h1sidenav">SOMOS STAFFING</h1>
+            <p class="psidenav">Facilitamos los procesos de Gestión Humana de su organización.<br>Más efectividad y
+                eficiencia.</p>
+            <br><br><br>
+            <button mat-raised-button class="matbuttons">NOSOTROS<mat-icon class="maticonpadding1">fingerprint</mat-icon></button><br>
+            <button mat-raised-button class="matbuttons">PREGUNTAS FRECUENTES <mat-icon class="maticonpadding2">contact_support</mat-icon></button><br>
+            <button mat-raised-button class="matbuttons">CONTACTO <mat-icon class="maticonpadding3">contact_mail</mat-icon></button><br><br>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            
+            <p class="pbienvenido"><strong>Bienvenido</strong></p>
+            <br>
+            <div class="loginBox">
+                <img src="assets/imgs/staffingLogo.png" width="155px" style="text-align: left">
+                <br><br>
+                <mat-icon class="loginicon">supervised_user_circle</mat-icon><input type="text" placeholder="Usuario (correo electrónico)" class="inputstyle" #correo><br><br>
+                <mat-icon class="loginicon">security</mat-icon><input type="password" placeholder="Contraseña" class="inputstyle" #password><br><br>
+                
+                <input type="button" value="Login" class="login"
+                    (click)="validarUsuario(correo.value, password.value)"><br><br>
+                <p class="smalltxt">¿Olvidaste tu contraseña?<br><a href="">haz click aquí</a></p>
+
+            </div>
+        </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+</body>
+
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Crear Nuevo Proyecto</title>
+    </head>
+
+
+    <body>
+        
+        <mat-sidenav-container>
+            <mat-sidenav mode="side" opened="true" disableClose="true">
+
+                <h2>ADMINISTRADOR</h2><br>
+                <button mat-raised-button routerLink="/adminlista" class="sidebarbuttons" >USUARIOS</button><hr>
+                <button mat-raised-button routerLink="/admincrearuser" class="sidebarbuttons" >Crear Nuevo Usuario/Admin</button><hr>
+                <button mat-raised-button routerLink="/admincrearproyecto" class="sidebarbuttons">Crear Nuevo Proyecto</button><hr>
+                <button mat-raised-button routerLink="/adminterminarproyecto" class="sidebarbuttons">Terminar/Eliminar Proyecto</button><hr>
+    
+                <button mat-raised-button routerLink="" class="sidebarbuttons" (click)="cerrarSesion()">Cerrar Sesión</button><br><br>
+                <br>
+                <img src="assets/imgs/staffingLogo.png" width="135px" class="centerimg">
+            </mat-sidenav>
+
+            <mat-sidenav-content>
+                <br><br>
+                <h1>Crear Nuevo Proyecto</h1>    
+                <br><br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre del Proyecto</mat-label>
+                    <input matInput type="text" #nombreProyecto>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Ubicación del Proyecto</mat-label>
+                    <input matInput type="text" #ubicacion>
+                </mat-form-field>
+                <br>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Inicio del Proyecto (DD-MM-AAAA)</mat-label>
+                    <input matInput [matDatepicker]="picker" #fechainicio>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill">
+                    <mat-label>Fecha de Término del Proyecto (DD-MM-AAAA)</mat-label>
+                    <input matInput [matDatepicker]="picker1" #fechatermino>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <br>
+                <mat-form-field appearance="fill" #habilidadesrequeridas>
+                    <mat-label>Habilidades Requeridas</mat-label>
+                    <textarea matInput rows="6" ></textarea>
+                </mat-form-field>
+
+                <br><br>
+                <button mat-raised-button type="submit" style="width: 20%;" (click)="crearProyecto(nombreProyecto.value,ubicacion.value,fechainicio.value,fechatermino.value)">Crear</button>    
+            </mat-sidenav-content>
+
+        </mat-sidenav-container>
+    </body>
+    
+</html>
+
+

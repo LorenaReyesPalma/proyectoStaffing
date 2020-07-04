@@ -1,0 +1,75 @@
+body{
+    font-family: Lato;
+}
+
+mat-sidenav-container{
+    height: 100%;
+    min-height: 100vh
+
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+}
+
+mat-sidenav-content{
+
+    color: white;
+    text-align: center;
+
+    min-height: 100vh;
+    background-image: url(https://designshack.net/wp-content/uploads/best-poly-backgrounds.png);
+    background-size: cover;
+}
+
+mat-sidenav{
+    overflow: hidden;
+    background-color: rgb(238, 238, 238);
+    width:20%;
+    box-shadow: 0px 0px 16px 2px #000000;
+
+}
+
+mat-form-field{
+    width: 50%;
+}
+
+h2{
+    font-family: Lato;
+    text-align: center;
+    border: solid gray;
+    border-width: 1px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.sidebarbuttons{
+    text-transform: uppercase;
+    height: 40px;
+    width: 100%;
+}
+
+.centerimg{
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+::ng-deep .mat-form-field-underline, ::ng-deep .mat-form-field-ripple {
+    background-color: white !important;
+    color: white !important
+}
+  
+::ng-deep .mat-form-field-empty.mat-form-field-label {
+      color: white;
+}
+
+::ng-deep .mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    color: white;
+    font-family: lobster;
+}
+

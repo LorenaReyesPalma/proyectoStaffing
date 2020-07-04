@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="uft-8">
+  <link rel="icon" href="imgs/logo.jpg">
+</head>
+<title>
+  Sistema Staffing
+</title>
+
+<body class="backgroundcolors">
+  <nav>
+    <button mat-raised-button class="navbuttons" (click)="navegarPerfil()">PERFIL</button>
+    <button mat-raised-button class="navbuttons">PROYECTOS</button>
+    <button mat-raised-button class="navbuttons" (click)="navegarPassword()">CAMBIAR CONTRASEÑA</button>
+    <button mat-raised-button class="navbuttons" (click)="cerrarSesion()">CERRAR SESIÓN</button>
+    <hr class="righthr">
+  </nav>
+  <br>
+  <br>
+  <br>
+  <div class="opacity3">
+    <h2>Registro de Proyectos</h2>
+    <table mat-table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre Proyecto</th>
+        <td mat-cell *matCellDef="let element">{{element.nombreProyecto}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechainicio">
+        <th mat-header-cell *matHeaderCellDef>Fecha de Inicio</th>
+        <td mat-cell *matCellDef="let element">{{element.fechaInicio}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="fechatermino">
+        <th mat-header-cell *matHeaderCellDef>Fecha de Término</th>
+        <td mat-cell *matCellDef="let element">{{element.fechaTermino}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ubicacion">
+        <th mat-header-cell *matHeaderCellDef>Ubicación</th>
+        <td mat-cell *matCellDef="let element">{{element.ubicacion}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cargoejercido">
+        <th mat-header-cell *matHeaderCellDef>Cargo Ejercido</th>
+        <td mat-cell *matCellDef="let element">{{element.cargoEjercido}}</td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+  <div class="opacity">
+    <img src="assets/imgs/profileicon.png" class="imgstyle">
+    <h3>
+      <hr class="lefthr">
+      <br>
+      Nombre: {{usuario.nombre}}
+      <br><br>
+      Apellido: {{usuario.apellido}}
+      <br><br>
+      Correo: {{usuario.correo}}
+      <br><br>
+      <hr class="lefthr">
+      <br>
+      <img src="assets/imgs/staffingLogo.png" class="imgstyle" style="width: 70%;">
+    </h3>
+
+  </div>
+
+</body>
+
+</html>
